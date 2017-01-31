@@ -26,7 +26,6 @@ echo Fruit::$fruits[0]->color;
 $orange->eat(50);
 echo $orange->size;
 
-
 // @todo
 $apple->lost_hour($appleBasket);
 $apple->putToTheBasket($appleBasket);

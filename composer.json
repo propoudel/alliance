@@ -1,0 +1,21 @@
+{
+  "name": "Tuklal/Alliance",
+  "description": "Interview test package",
+  "license": "free",
+  "keywords": ["alliance"],
+  "authors": [
+    {
+      "name": "Tuklal Poudel",
+      "email": "developer.sagarpoudel@gmail.com"
+    }
+  ],
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "4.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tuklal\\Alliance\\": "src"
+    }
+  }
+}

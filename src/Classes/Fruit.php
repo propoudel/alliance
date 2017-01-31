@@ -1,91 +1,55 @@
 <?php namespace Tuklal\Alliance\Classes;
 
-abstract class Fruit
+use Tuklal\Alliance\Classes\Basket;
+
+class Fruit
 {
-
     public $color;
-    private $size;
-    private $appearDate;
-    private $expireIn;
-    private $status;
-    private $consumedQty;
+    public $size;
+    public $dateOfAppearance;
+    public $expireIn;
+    public $status;
+    public $consumed;
+    public static $fruits = [];
 
+    const STATUS_ON_TREE   = 'on tree';
+    const STATUS_ON_GROUND = 'on ground';
 
     public function __construct($color)
     {
-        $this->color = $color;
+        $this->color      = $color;
+        $this->status     = self::STATUS_ON_TREE;
+        $this->size       = 1;
+        $this->consumed   = 0;
+        $this->expireIn   = 7;
+        self::$fruits[] = $this;
     }
 
-    public function getSize()
+    public function eat($consumed)
     {
-        return $this->size;
+        if ($this->status != self::STATUS_ON_TREE && $consumed > 0) {
+            $this->size -= $consumed/100;
+        }
     }
 
-    public function setSize($size)
+    public function fallToGround()
     {
-        $this->size = $size;
+        $this->status = self::STATUS_ON_GROUND;
+        $this->dateOfAppearance = time();
     }
 
-    public function getAppearDate()
+    public function lost_hour(Basket $basket)
     {
-        return $this->appearDate;
+        $this->dateOfAppearance -= 3600;
     }
 
-    public function setAppearDate($date)
+    public function putToTheBasket(Basket $basket)
     {
-        $this->appearDate = $date;
+        $basket->addFruits($this);
     }
 
-    public function getExpiredIn()
-    {
-        return $this->expireIn;
-    }
-
-    public function setExpireIn($date)
-    {
-        $this->expireIn = $date;
-    }
-
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    public function setStatus($status)
-    {
-        $this->status = $status;
-    }
-
-    public function getConsumedQty()
-    {
-        return $this->consumedQty;
-    }
-
-    public function setConsumeQty($qty)
-    {
-        $this->consumedQty = $qty;
-    }
-
-    public function eat()
+    public function growOld()
     {
 
     }
-
-
-    public function fall()
-    {
-
-    }
-
-
-    public function grow()
-    {
-
-    }
-
-    public function addToBasket()
-    {
-
-    }
-
 }

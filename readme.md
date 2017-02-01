@@ -9,6 +9,7 @@ php package
 Ops!
 
 ## Install
+The best way to install Trejjam/Email is using Composer:
 $ composer install
 
 $ php www/index.php

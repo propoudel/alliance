@@ -12,14 +12,14 @@ echo $appleBasket->getTitle();
 echo $appleBasket->status;
 
 //Apple
-$apple = new Fruit('Apple');
+$apple = new Fruit('Red');
 echo $apple->color;
 echo Fruit::$fruits[0]->color;
 $apple->eat(50);
 echo $apple->size;
 
 //Orange
-$orange = new Fruit('Orange');
+$orange = new Fruit('Green');
 echo $orange->color;
 echo Fruit::$fruits[0]->color;
 

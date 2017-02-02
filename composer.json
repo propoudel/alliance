@@ -1,6 +1,7 @@
 {
   "name": "propoudel/alliance",
   "version": "1.0.0",
+  "minimum-stability": "dev",
   "description": "Interview test package",
   "license": "free",
   "keywords": ["alliance"],
